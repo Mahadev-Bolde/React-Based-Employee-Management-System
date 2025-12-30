@@ -20,3 +20,5 @@
 ### Utils
 
 1. LocalStorage.jsx
+
+# The Data is Stored in LocalStorage in Browser.
