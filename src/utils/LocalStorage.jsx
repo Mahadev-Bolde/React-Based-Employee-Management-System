@@ -1,0 +1,242 @@
+const employees = [
+  {
+    id: 1,
+    firstName: "Amit",
+    email: "e@e.com",
+    password: "123",
+    taskNumbers: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
+    tasks: [
+      {
+        title: "Submit Weekly Report",
+        description: "Prepare and submit the weekly performance report.",
+        date: "2025-01-05",
+        category: "Reporting",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Client Follow-up",
+        description: "Follow up with client regarding feedback.",
+        date: "2025-01-06",
+        category: "Communication",
+        active: false,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Update Documentation",
+        description: "Update internal project documentation.",
+        date: "2025-01-03",
+        category: "Documentation",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+    ],
+  },
+  {
+    id: 2,
+    firstName: "Priya",
+    email: "employee2@company.com",
+    password: "123",
+    taskNumbers: {
+      active: 1,
+      newTask: 1,
+      completed: 0,
+      failed: 1,
+    },
+    tasks: [
+      {
+        title: "Fix Login Bug",
+        description: "Resolve the login issue reported by QA.",
+        date: "2025-01-04",
+        category: "Development",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Code Review",
+        description: "Review pull requests from team members.",
+        date: "2025-01-05",
+        category: "Review",
+        active: false,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Deploy Hotfix",
+        description: "Deploy hotfix to production server.",
+        date: "2025-01-02",
+        category: "Deployment",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+  {
+    id: 3,
+    firstName: "Rohan",
+    email: "employee3@company.com",
+    password: "123",
+    taskNumbers: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+    tasks: [
+      {
+        title: "Design Homepage",
+        description: "Create homepage UI design.",
+        date: "2025-01-07",
+        category: "Design",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Fix UI Bugs",
+        description: "Resolve UI issues reported by users.",
+        date: "2025-01-04",
+        category: "UI",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Prepare Assets",
+        description: "Prepare design assets for developers.",
+        date: "2025-01-03",
+        category: "Assets",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+  {
+    id: 4,
+    firstName: "Sneha",
+    email: "employee4@company.com",
+    password: "123",
+    taskNumbers: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
+    tasks: [
+      {
+        title: "Database Backup",
+        description: "Perform scheduled database backup.",
+        date: "2025-01-05",
+        category: "Database",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Optimize Queries",
+        description: "Optimize slow-running SQL queries.",
+        date: "2025-01-06",
+        category: "Optimization",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Monitor Server",
+        description: "Monitor server health and logs.",
+        date: "2025-01-07",
+        category: "Monitoring",
+        active: false,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+  },
+  {
+    id: 5,
+    firstName: "Arjun",
+    email: "employee5@company.com",
+    password: "123",
+    taskNumbers: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+    tasks: [
+      {
+        title: "Test New Feature",
+        description: "Test the newly developed feature.",
+        date: "2025-01-05",
+        category: "Testing",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Write Test Cases",
+        description: "Create test cases for upcoming sprint.",
+        date: "2025-01-04",
+        category: "QA",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Bug Verification",
+        description: "Verify fixed bugs in staging environment.",
+        date: "2025-01-03",
+        category: "Verification",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+];
+
+const admin = [
+  {
+    id: 6,
+    firstName: "Raj",
+    email: "admin@company.com",
+    password: "123",
+  },
+];
+
+export const setLocalStorage = () => {
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admin", JSON.stringify(admin));
+};
+
+export const gettLocalStorage = () => {
+  const employees = JSON.parse(localStorage.getItem("employees"));
+  const admin = JSON.parse(localStorage.getItem("admin"));
+  return { employees, admin };
+};
